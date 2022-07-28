@@ -1,0 +1,444 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  --main-color: #091921;
+  --secondary-color: #f0db4f;
+  /* --secondary-color: rgba(255, 203, 116, 0.9); */
+  --tertiary-color: #b6465f;
+  --fortiary-color: #e9e6ff;
+  --fivety-color: #ec4e20;
+  --font-size: 16px;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--main-color);
+  font-family: "Orbitron", sans-serif;
+  color: var(--tertiary-color);
+  letter-spacing: 1px;
+}
+.light {
+  background-color: #e9e6ff;
+  transition: all 0.5s;
+}
+h1 {
+  margin: 2rem;
+}
+/***********************************************************************hamburger menu*/
+.header {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.header h1 {
+  text-align: center;
+  margin: 0px;
+}
+.header button {
+  background-color: transparent;
+  z-index: 100;
+  border: none;
+}
+.header button:hover {
+  cursor: pointer;
+}
+/************************************************************************** MENU LISTA */
+#menu-button span {
+  display: block;
+  width: 33px;
+  height: 5px;
+  margin-bottom: 5px;
+  /* position: relative; */
+
+  z-index: 100;
+  background: var(--tertiary-color);
+  border-radius: 5px;
+
+  transform-origin: 5px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+.span-two {
+  opacity: 0;
+}
+.fijar-button {
+  right: 1rem;
+  top: 1.5rem;
+  position: fixed;
+  height: 20px;
+}
+.span-one {
+  transform: rotate(45deg) translate(-2px, -7px);
+  position: fixed;
+}
+.span-three {
+  transform: rotate(-45deg);
+  position: fixed;
+}
+.menu-list {
+  position: fixed;
+  left: -100%;
+  background-color: var(--main-color);
+  width: 100%;
+  height: 100vh;
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  z-index: 90;
+  top: 0px;
+  transition: transform ease 0.6s;
+  padding-top: 3.5rem;
+}
+.open-menu {
+  transform: translate(100%);
+}
+.menu-list li {
+  text-align: center;
+  list-style: none;
+}
+.menu-list li:hover {
+  background-color: var(--tertiary-color);
+  cursor: pointer;
+}
+.menu-list li a {
+  display: grid;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  color: var(--secondary-color);
+}
+/*****************************************************************SECTION EXERCISES*/
+.excercises {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+.excercises h1 {
+  color: var(--secondary-color);
+}
+.excercises section {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/****************************************************************************SCROLLTOP*/
+.scrollTop {
+  background-color: var(--secondary-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--secondary-color);
+  box-shadow: 0 -4px 7px rgb(255 255 255 / 15%),
+    inset 0 -4px 7px rgb(255 255 255 / 15%), 0 4px 7px rgb(0 0 0 / 50%),
+    inset 0 4px 7px rgb(0 0 0 / 50%);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  visibility: hidden;
+  animation: 1.5s subirBajar infinite alternate;
+}
+.scrollTop span {
+  font-size: large;
+  color: var(--main-color);
+}
+.scrollTop:hover {
+  cursor: pointer;
+  background-color: #ecc37d;
+}
+.scrollTopHidden {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity ease-in-out 0.8s;
+}
+@keyframes subirBajar {
+  0% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
+/**********************************************************************LIGHT MODE*/
+label {
+  position: fixed;
+  top: calc(100vh - 45px);
+  left: 10px;
+  width: 75px;
+  height: 35px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  cursor: pointer;
+}
+label input {
+  appearance: none;
+}
+.sppan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 35px;
+  background-color: var(--main-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+label input:checked ~ span {
+  left: 38px;
+}
+label span .fa-lightbulb {
+  color: rgba(255, 203, 116, 0.5);
+  font-size: 1.2rem;
+  transition: 0.5s;
+}
+label input:checked ~ span .fa-lightbulb {
+  color: rgba(255, 203, 116, 1);
+  filter: drop-shadow(0 0 5px #ffcb74) drop-shadow(0 0 10px #ffcb74)
+    drop-shadow(0 0 15px #ffcb74);
+}
+/********************************************************************Light Mode 2*/
+#light-mode2 {
+  position: absolute;
+  top: 150px;
+  left: 10px;
+  width: 85px;
+  height: 35px;
+  background-color: #434543;
+  background-image: linear-gradient(90deg, #434543 -100%, #070808 100%);
+  box-shadow: inset 0px 0px 2px 3px #171717;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#light-mode2 input {
+  appearance: none;
+}
+#light-mode2 p {
+  position: absolute;
+  width: 50%;
+  height: 35px;
+  top: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.I {
+  visibility: hidden;
+}
+
+#light-mode2 input:checked ~ .I {
+  left: 45px;
+  visibility: visible;
+}
+#light-mode2 input:checked ~ .O {
+  visibility: hidden;
+}
+#light-mode2 span .fa-lightbulb {
+  color: rgba(255, 203, 116, 0.5);
+  font-size: 1.2rem;
+  transition: 0.5s;
+}
+#light-mode2 input:checked ~ span .fa-lightbulb {
+  color: rgba(255, 203, 116, 1);
+  filter: drop-shadow(0 0 5px #ffcb74) drop-shadow(0 0 10px #ffcb74)
+    drop-shadow(0 0 15px #ffcb74);
+}
+/*****************************************************Responsive Tester*/
+.form-control {
+  position: relative;
+  margin: 20px 0 40px;
+  width: 300px;
+}
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px var(--secondary-color) solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: var(--secondary-color);
+}
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: var(--tertiary-color);
+}
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+  background-color: transparent;
+}
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: var(--tertiary-color);
+  transform: translateY(-30px);
+}
+.btn-abrir,
+.btn-cerrar {
+  width: 100px;
+  height: 50px;
+  margin: 0 10px;
+  background-color: #091921;
+  border: 3px solid #091921;
+  font-family: "Orbitron", sans-serif;
+  color: var(--secondary-color);
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 0 -4px 7px rgb(255 255 255 / 5%),
+    inset 0 -4px 7px rgb(255 255 255 / 5%), 0 4px 7px rgb(0 0 0 / 30%),
+    inset 0 4px 7px rgb(0 0 0 / 30%);
+}
+.btn-abrir:hover,
+.btn-cerrar:hover {
+  box-shadow: 0 -4px 7px rgb(255 255 255 / 5%),
+    inset 0 -4px 7px rgb(255 255 255 / 5%), 0 4px 7px rgb(0 0 0 / 70%),
+    inset 0 4px 7px rgb(0 0 0 / 50%);
+  background-color: rgba(7, 21, 27, 0.8);
+  cursor: pointer;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/**************************************************************DETECCOIN DE CONEXION*/
+.conexion {
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  top: 0px;
+  color: var(--fortiary-color);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 999999;
+}
+.conectado {
+  background-color: green;
+  display: flex;
+}
+.desconectado {
+  background-color: var(--fivety-color);
+  display: flex;
+}
+/***************************************************************KEYBOARD**/
+.keyboardContainer {
+  position: relative;
+  background-color: var(--main-color);
+  margin-top: 20px;
+  border: #e9e6ff 1px solid;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.keyboardContainer .secodn-line,
+.first-line,
+.third-line,
+.fiveth-line,
+.forth-line {
+  display: flex;
+  flex-direction: row;
+}
+.keyboardContainer span {
+  position: relative;
+  color: var(--fivety-color);
+  font-size: 0.8rem;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
+  box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+    inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75),
+    10px 20px 25px rgba(0, 0, 0, 0.4);
+  user-select: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.keyboardContainer .fiveth-line span {
+  width: 60px;
+}
+.keyboardContainer span::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  bottom: 10px;
+  right: 8px;
+  background: linear-gradient(90deg, #2d2d2d, #4d4d4d);
+  border-radius: 7px;
+  box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1),
+    10px 5px 10px rgba(0, 0, 0, 0.15);
+  border-left: 1px solid #0004;
+  border-bottom: 1px solid #0004;
+  border-top: 1px solid #0009;
+}
+.keyboardContainer span i {
+  font-style: normal;
+  position: relative;
+  filter: drop-shadow(0 0 2px var(--fivety-color));
+}
+.keyboardContainer span:active {
+  filter: brightness(1.5);
+}
+.active {
+  filter: brightness(1.5);
+  color: #070808;
+}
+.keyboardContainer .secodn-line .tab {
+  width: 75px;
+}
+.keyboardContainer .first-line .left-arrow {
+  width: 100px;
+}
+.keyboardContainer .third-line .caps {
+  width: 97px;
+}
+.keyboardContainer .third-line .enter {
+  width: 114px;
+}
+.keyboardContainer .forth-line .leftshift {
+  width: 120px;
+}
+.keyboardContainer .forth-line .rightshift {
+  width: 150px;
+}
+.keyboardContainer .fiveth-line .ctrl {
+  width: 80px;
+}
+.keyboardContainer .fiveth-line .space {
+  width: 350px;
+  font-size: 3rem;
+}
