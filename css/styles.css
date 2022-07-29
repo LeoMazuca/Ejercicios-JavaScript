@@ -5,9 +5,9 @@
 
   --main-color: #091921;
   --secondary-color: #f0db4f;
-  /* --secondary-color: rgba(255, 203, 116, 0.9); */
-  --tertiary-color: #b6465f;
-  --fortiary-color: #e9e6ff;
+  --tertiary-color: #b6465f; /* 
+  --fortiary-color: #e9e6ff; */
+  --fortiary-color: #d1dae3;
   --fivety-color: #ec4e20;
   --font-size: 16px;
 }
@@ -19,16 +19,58 @@ html {
 }
 body {
   background: var(--main-color);
-  font-family: "Orbitron", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   color: var(--tertiary-color);
   letter-spacing: 1px;
 }
 .light {
-  background-color: #e9e6ff;
+  background-color: var(--fortiary-color);
   transition: all 0.5s;
 }
 h1 {
+  margin-bottom: 2rem;
+}
+/*****************************************************************SECTION EXERCISES*/
+.excercises {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+.excercises h1 {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
+.excercises section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 2rem;
+}
+.excercises hr {
+  height: 10px;
+  border-radius: 10px;
+  border: 1px solid #091921;
+  box-shadow: 0 -3px 5px rgb(255 255 255 / 10%),
+    inset 0 -1px 4px rgb(255 255 255 / 10%), 0 5px 5px rgb(0 0 0 / 50%),
+    inset 0 3px 3px rgb(0 0 0 / 50%);
+  background: transparent;
+  margin: 5rem 0;
+}
+/*****************************************************************SECTION EXERCISES LIGHT*/
+.excercisesLight h1 {
+  color: var(--main-color);
+}
+.excercisesLight hr {
+  height: 10px;
+  border-radius: 10px;
+  border: 1px solid #cad3dc;
+  box-shadow: 0 -3px 5px rgb(255 255 255 / 30%),
+    inset 0 -95px 1px rgb(255 255 255 / 10%), 0 3px 5px rgb(255 255 255 / 23%),
+    inset 0 3px 1px rgb(0 0 0 / 10%);
+  background: transparent;
+  margin: 5rem 0;
 }
 /***********************************************************************hamburger menu*/
 .header {
@@ -55,14 +97,10 @@ h1 {
   width: 33px;
   height: 5px;
   margin-bottom: 5px;
-  /* position: relative; */
-
   z-index: 100;
   background: var(--tertiary-color);
   border-radius: 5px;
-
   transform-origin: 5px 0px;
-
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
@@ -115,22 +153,145 @@ h1 {
   height: 100%;
   color: var(--secondary-color);
 }
-/*****************************************************************SECTION EXERCISES*/
-.excercises {
-  width: 80%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem;
+/* ********************************************************************************RELOJ */
+#exc-one {
+  justify-content: space-around;
+  font-family: "Orbitron", sans-serif;
 }
-.excercises h1 {
-  color: var(--secondary-color);
-}
-.excercises section {
-  text-align: center;
-
+.clock {
+  width: 350px;
+  height: 350px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  background: url(../assets/img/clock4.png);
+  background-size: cover;
+  border-radius: 50%;
+  border: 3px solid #091921;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+    inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3),
+    inset 0 15px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+}
+.clock:before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 70;
+}
+.clock .hour,
+.clock .min,
+.clock .sec {
+  position: absolute;
+}
+.clock .hour,
+.hr {
+  width: 160px;
+  height: 160px;
+}
+.clock .min,
+.mn {
+  width: 190px;
+  height: 190px;
+}
+.clock .sec,
+.sc {
+  width: 230px;
+  height: 230px;
+}
+.hr,
+.mn,
+.sc {
+  display: flex;
+  justify-content: center;
+  /* align-items: center */
+  position: absolute;
+  border-radius: 50%;
+}
+.hr:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 80px;
+  background: var(--tertiary-color);
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
+}
+.mn:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 90px;
+  background: #fff;
+  z-index: 11;
+  border-radius: 6px 6px 0 0;
+}
+.sc:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: var(--fivety-color);
+  z-index: 12;
+  border-radius: 6px 6px 0 0;
+}
+/* *******************************************RELOJ LIGHT MODE*/
+.clockLight {
+  border: 3px solid #cad3dc;
+  box-shadow: 0 -15px 15px rgb(255 255 255 / 40%),
+    0px 15px 15px rgb(0 0 0 / 30%), inset 0px -15px 15px rgb(255 255 255 / 40%),
+    inset 0px 15px 15px rgb(0 0 0 / 20%);
+}
+/* *********************************BUTTONS */
+.buttons {
+  display: flex;
+}
+.buttons button {
+  width: 75px;
+  height: 50px;
+  margin: 0 10px;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
+  color: var(--secondary-color);
+  box-shadow: 0 -4px 7px rgb(255 255 255 / 5%),
+    inset 0 -4px 7px rgb(255 255 255 / 5%), 0 4px 7px rgb(0 0 0 / 30%),
+    inset 0 4px 7px rgb(0 0 0 / 30%);
+}
+.buttons button:hover {
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+/* *********************************BUTTONS LIGH MODE */
+.buttonsLight button {
+  background-color: var(--fortiary-color);
+  border: 3px solid #cad3dc;
+  color: var(--main-color);
+  /*box-shadow: 1 -4px 7px rgb(255 255 255 / 50%),
+    0 -4px 7px rgb(255 255 255 / 10%), inset 0 4px 7px rgb(255 255 255 / 50%),
+    inset 0 4px 7px rgb(0 0 0 / 10%); */
+
+  background-color: var(--fortiary-color);
+  border: 3px solid #cad3dc;
+  color: var(--main-color);
+  box-shadow: 0 -5px 10px rgb(255 255 255 / 70%),
+    inset 0 -7px 9px rgb(255 255 255 / 60%), 0 10px 10px rgb(0 0 0 / 20%),
+    inset 0 9px 9px rgb(0 0 0 / 20%);
+}
+.buttonsLight button:hover {
+  filter: brightness(0.9);
+}
+/* *******************************************COUNTDOWN */
+#exc-three {
+  font-family: "Orbitron", sans-serif;
+  font-size: 18px;
+}
+.countdown span {
+  color: var(--fivety-color);
 }
 /****************************************************************************SCROLLTOP*/
 .scrollTop {
@@ -351,12 +512,16 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color: var(--fivety-color);
   display: flex;
 }
-/***************************************************************KEYBOARD**/
+/***************************************************************KEYBOARD DARK MODE**/
 .keyboardContainer {
   position: relative;
-  background-color: var(--main-color);
+  background-color: #282828;
+  box-shadow: 25px 25px 35px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25), inset -5px -5px 15px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 15px rgba(0, 0, 0, 0.5);
   margin-top: 20px;
-  border: #e9e6ff 1px solid;
+  border: #000 2px solid;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -371,21 +536,24 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .keyboardContainer span {
   position: relative;
-  color: var(--fivety-color);
-  font-size: 0.8rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
   width: 50px;
   height: 50px;
+  padding-top: 8px;
+  padding-left: 10px;
   margin: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
+  border-radius: 5px;
+  color: var(--fivety-color);
+  background: linear-gradient(180deg, #282828, #202020);
   box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
     inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75),
     10px 20px 25px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  font-size: 0.8rem;
   user-select: none;
   cursor: pointer;
-  border-radius: 5px;
 }
 .keyboardContainer .fiveth-line span {
   width: 60px;
@@ -393,17 +561,17 @@ input[type="number"]::-webkit-outer-spin-button {
 .keyboardContainer span::before {
   content: "";
   position: absolute;
-  top: 2px;
-  left: 4px;
+  top: 3px;
+  left: 3px;
   bottom: 10px;
   right: 8px;
-  background: linear-gradient(90deg, #2d2d2d, #4d4d4d);
-  border-radius: 7px;
-  box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1),
+  background: linear-gradient(90deg, #232323, #4a4a4a);
+  border-radius: 5px;
+  box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25),
     10px 5px 10px rgba(0, 0, 0, 0.15);
   border-left: 1px solid #0004;
   border-bottom: 1px solid #0004;
-  border-top: 1px solid #0009;
+  border-top: 1px solid #0004;
 }
 .keyboardContainer span i {
   font-style: normal;
@@ -441,4 +609,44 @@ input[type="number"]::-webkit-outer-spin-button {
 .keyboardContainer .fiveth-line .space {
   width: 350px;
   font-size: 3rem;
+}
+/***************************************************************KEYBOARD LIGTH MODE**/
+.keyboardLight {
+  background-color: #fafafa;
+  border: #000 2px solid;
+  border-radius: 10px;
+  box-shadow: 25px 25px 35px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25), inset -5px -5px 15px rgba(0, 0, 0, 0.25),
+    inset 5px 5px 15px rgba(0, 0, 0, 0.25);
+}
+.keyboardLight span {
+  color: var(--fivety-color);
+  background: linear-gradient(180deg, #fafafa, #f4f4f4);
+  box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
+    inset 0 -8px 8px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(0, 0, 0, 1),
+    10px 20px 25px rgba(0, 0, 0, 0.25);
+}
+.keyboardLight span::before {
+  background: linear-gradient(90deg, #e6e6e6, #efefef);
+  border-radius: 5px;
+  box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25),
+    10px 5px 10px rgba(0, 0, 0, 0.15);
+  border-left: 1px solid #fff4;
+  border-bottom: 1px solid #fff4;
+  border-top: 1px solid #fff9;
+}
+.keyboardLight span::before {
+  background: linear-gradient(90deg, #e6e6e6, #efefef);
+  border-radius: 5px;
+  box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25),
+    10px 5px 10px rgba(0, 0, 0, 0.15);
+  border-left: 1px solid #fff4;
+  border-bottom: 1px solid #fff4;
+  border-top: 1px solid #fff9;
+}
+.keyboardLight span:active {
+  filter: brightness(0.9);
+}
+.keyboardLight span i {
+  color: blue;
 }

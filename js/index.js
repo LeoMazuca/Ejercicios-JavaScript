@@ -16,9 +16,9 @@ d.addEventListener("DOMContentLoaded", e => {
     hamburgerMenu("#menu-button", ".menu-list", ".menu-item a", "#span-one", "#span-two", "#span-three");
     digitalClock("#activar-reloj", "#desactivar-reloj");
     alarm("assets/sounds/alarma.mp3", "#activar-alarma", "#desactivar-alarma");
-    minutesToMidnight(new Date("Jul 21, 22 13:31:00"), "It's Midnight");
+    minutesToMidnight(new Date("Jul 30, 22 13:31:00"), "It's Midnight");
     scrollTop(".scrollTop");
-    lightMode();
+    lightMode("body", ".keyboardContainer", ".clock", ".excercises", ".buttons");
     responsiveTester("responsive-tester");
     responsiveMedia("video", "(min-width: 1024px)",`
     <a href="https://www.youtube.com/embed/16geDhp5Xmg" target="_blank"

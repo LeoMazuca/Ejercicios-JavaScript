@@ -6,10 +6,9 @@ const d = document,
             n.mediaDevices.getUserMedia({video:true, audio:true}).then((strem) => {
                 $video.srcObject = strem;
                 $video.play();
-                console.log("ya se hizo")
+                console.log("ya se hizo");
             }).catch((err) => {
                 $video.insertAdjacentHTML("beforebegin", `<p>Sucedio el siguiente error:<mark>${err}</mark></p>`);
-                console.log(`Sucedio el siguiente error: ${err}`);
             });
         }
     };

@@ -41,13 +41,13 @@ export function keyEvent(e){
                }
             }
 
-            d.querySelector(`.${e.key.toLowerCase()}`).style.filter= "brightness(1.5)";
+            d.querySelector(`.${e.key.toLowerCase()}`).style.filter= "brightness(.9)";
             setTimeout(() => {
             d.querySelector(`.${e.key.toLowerCase()}`).style.filter= "brightness(1)";    
             }, 100);
     }else{
         if(e.keyCode === 32){
-                d.querySelector(`.space`).style.filter= "brightness(1.5)";
+                d.querySelector(`.space`).style.filter= "brightness(.9)";
                 setTimeout(() => {
                 d.querySelector(`.space`).style.filter= "brightness(1)";    
                 }, 100);
