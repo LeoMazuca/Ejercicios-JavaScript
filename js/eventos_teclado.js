@@ -3,7 +3,6 @@ let positionY = 0;
 let positionX = 0;
 
 export function keyEvent(e){
-    e.preventDefault(); 
     if(!/[^a-z]/ig.test(e.key)){
         const limitBall = d.querySelector(".recuadro").getBoundingClientRect(),
         limitStage = d.querySelector(".container").getBoundingClientRect();

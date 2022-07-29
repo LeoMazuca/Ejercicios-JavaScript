@@ -36,7 +36,7 @@ export default function deteccionDispositovos(id){
         }
     };
     $id.innerHTML = `
-        <ul>
+        <ul style = "list-style: none;">
             <li>User Agent: <b>${ua}</b></li>
             <li>Plataform: <b>
                 ${isMobile.any()?isMobile.any():isDesktop.any()}

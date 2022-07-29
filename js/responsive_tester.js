@@ -10,6 +10,9 @@ export default function responsiveTester(form){
     document.addEventListener("click", e => {
         if  (e.target === $form.cerrar){
             tester.close();
+            $form.url.value = "";
+            $form.width.value = "";
+            $form.height.value = "";
         }
     });
 };

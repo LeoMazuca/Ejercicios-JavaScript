@@ -3,6 +3,7 @@ import deteccionDispositovos from "./deteccion_dispositvos.js";
 import deteccion_webcam from "./deteccion_webcam.js";
 import detectar_conexion from "./detectar_conexion.js";
 import { keyEvent } from "./eventos_teclado.js";
+import geolocalizacion from "./geolocalizacion.js";
 import responsiveMedia from "./iframe_responsive.js";
 import { lightMode } from "./light_mode.js";
 import hamburgerMenu from "./menu_hamburgesa.js";
@@ -18,7 +19,7 @@ d.addEventListener("DOMContentLoaded", e => {
     alarm("assets/sounds/alarma.mp3", "#activar-alarma", "#desactivar-alarma");
     minutesToMidnight(new Date("Jul 30, 22 13:31:00"), "It's Midnight");
     scrollTop(".scrollTop");
-    lightMode("body", ".keyboardContainer", ".clock", ".excercises", ".buttons");
+    lightMode("body", ".keyboardContainer", ".clock", ".excercises", ".buttons", ".container");
     responsiveTester("responsive-tester");
     responsiveMedia("video", "(min-width: 1024px)",`
     <a href="https://www.youtube.com/embed/16geDhp5Xmg" target="_blank"
@@ -48,6 +49,7 @@ d.addEventListener("DOMContentLoaded", e => {
   `);
   deteccionDispositovos("user-agent");
   deteccion_webcam("webCam");
+  geolocalizacion(".datosLocalizacion");
 });
 d.addEventListener("keydown", e => {
     keyEvent(e);

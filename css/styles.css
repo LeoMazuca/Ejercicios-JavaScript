@@ -49,13 +49,9 @@ h1 {
   margin: 2rem;
 }
 .excercises hr {
-  height: 10px;
   border-radius: 10px;
   border: 1px solid #091921;
-  box-shadow: 0 -3px 5px rgb(255 255 255 / 10%),
-    inset 0 -1px 4px rgb(255 255 255 / 10%), 0 5px 5px rgb(0 0 0 / 50%),
-    inset 0 3px 3px rgb(0 0 0 / 50%);
-  background: transparent;
+  box-shadow: 0 -3px 5px rgb(255 255 255 / 10%), 0 5px 5px rgb(0 0 0 / 50%);
   margin: 5rem 0;
 }
 /*****************************************************************SECTION EXERCISES LIGHT*/
@@ -63,14 +59,8 @@ h1 {
   color: var(--main-color);
 }
 .excercisesLight hr {
-  height: 10px;
-  border-radius: 10px;
   border: 1px solid #cad3dc;
-  box-shadow: 0 -3px 5px rgb(255 255 255 / 30%),
-    inset 0 -95px 1px rgb(255 255 255 / 10%), 0 3px 5px rgb(255 255 255 / 23%),
-    inset 0 3px 1px rgb(0 0 0 / 10%);
-  background: transparent;
-  margin: 5rem 0;
+  box-shadow: 0 -3px 5px rgb(255 255 255 / 70%), 0 3px 5px rgb(0 0 0 / 23%);
 }
 /***********************************************************************hamburger menu*/
 .header {
@@ -285,6 +275,40 @@ h1 {
 .buttonsLight button:hover {
   filter: brightness(0.9);
 }
+/******************************************************************EVENTOS DE TECLADO*/
+.container {
+  background-color: var(--tertiary-color);
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid var(--tertiary-color);
+  box-shadow: 0 -4px 7px rgb(255 255 255 / 5%),
+    inset 0 -4px 7px rgb(255 255 255 / 5%), 0 4px 7px rgb(0 0 0 / 30%),
+    inset 0 4px 7px rgb(0 0 0 / 30%);
+  margin-bottom: 2rem;
+}
+.recuadro {
+  background-color: var(--secondary-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--secondary-color);
+  box-shadow: 0 -4px 7px rgb(255 255 255 / 15%),
+    inset 0 -4px 7px rgb(255 255 255 / 15%), 0 4px 7px rgb(0 0 0 / 50%),
+    inset 0 4px 7px rgb(0 0 0 / 50%);
+}
+/******************************************************************EVENTOS DE TECLADO LIGHT MODE*/
+.containerLight {
+  background-color: var(--main-color);
+  border: 1px solid var(--tertiary-color);
+}
+.containerLight .recuadro {
+  background-color: var(--tertiary-color);
+  border: 1px solid var(--tertiary-color);
+}
 /* *******************************************COUNTDOWN */
 #exc-three {
   font-family: "Orbitron", sans-serif;
@@ -425,6 +449,14 @@ label input:checked ~ span .fa-lightbulb {
     drop-shadow(0 0 15px #ffcb74);
 }
 /*****************************************************Responsive Tester*/
+#exc-five {
+  background-color: var(--main-color);
+  border-radius: 10px;
+  margin: auto;
+}
+#exc-five h1 {
+  color: var(--secondary-color);
+}
 .form-control {
   position: relative;
   margin: 20px 0 40px;
@@ -649,4 +681,16 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 .keyboardLight span i {
   color: blue;
+  list-style: none;
+}
+/*******************************************************************GEOLOCALIZACION*/
+.datosLocalizacion p {
+  font-size: 1.2rem;
+  margin: 0.5rem;
+}
+/******************************************************************MEDIAS  QUERIES*/
+@media (max-width: 950px) {
+  .keyboardContainer {
+    display: none;
+  }
 }
